@@ -1,0 +1,14 @@
+- name: Install the packages
+  hosts: skill
+  become_method: sudo
+  become_user: root
+  become: yes
+  tasks:
+    - name: Install all the packages
+     # sudo: yes
+      apt:
+        name:
+          - cmatrix
+          - cowsay
+          - sl
+        state: present
